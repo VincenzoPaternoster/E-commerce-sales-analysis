@@ -30,8 +30,8 @@ E-commerce-sales-analysis/
       ├── E-commerce_sales_analysis.pbi
       ├── E-commerce_sales_analysis.pdf
 │── sql/               
-│     ├── cleaning.sql
-│     ├── modeling.sql
+│     ├── Data_Cleaning.sql
+│     ├── Data_Modeling.sql
 │── python/
       │──RFM Segmentation of an E-commerce customers.ipynb.
 │── README.md
