@@ -76,24 +76,21 @@ Key operations performed:
 - Used techniques (RFM segmentation,k-means clustering,Yeo-Johnson transformation,Standardization)
 - Main libraries (Pandas,Numpy,Sklearn,Scipy,Matplotlib,Seaborn)
 
-  Yeo–Johnson transformation applied to the RFM features to reduce skewness and stabilize variance.
-  The original distributions of Frequency, Recency and Monetary were highly skewed, and K-Means is sensitive to extreme values.
-  Yeo–Johnson was chosen because, unlike Box–Cox or log transformation, it can handle zero values (present in Recency).
+  Yeo–Johnson transformation applied to the RFM features to reduce skewness and stabilize variance. [See variables distributions](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Distributions/RFM_Features_distributions.png)
+  The original distributions of Frequency, Recency and Monetary were highly skewed, and K-Means is sensitive to extreme values.[See extreme values](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Distributions/BoxPlot_Outliers.png)
+  Yeo–Johnson was chosen because, unlike Box–Cox or log transformation, it can handle zero values (present in Recency). [See difference between trasformations](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/tree/main/Images/Distributions)
   After the transformation, the features were standardized before fitting the clustering model.
 ---
 
 ## 🔍 Key results
-- Insight 1: Revenue in 2024 presents high volatility in all the quarters.
-             There are several peaks but the overall direction is slightly upward, indicating a soft improvement in sales throughout the year.
-- Insight 2: There are products that need to be eliminated, recalibrated and promoted
-- Insight 3: The best product in terms of revenue is 212
-- Insight 4: The most used channel is the web, followed by mobile
-- Insight 5: E-commerce customers can be divided into five clusters. Actionable commercial strategies have been provided for each cluster
-
-(Inserire eventuali grafici nella cartella /images e richiamarli con markdown)
-
-Esempio:
-![Esempio grafico](images/example.png)
+- Insight 1: Revenue in 2024 presents high volatility in all the quarters. [Revenue Trend Linechart](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Revenue_trend.png)
+  
+  There are several peaks but the overall direction is slightly upward, indicating a soft improvement in sales throughout the year.
+- Insight 2: There are products that need to be eliminated, recalibrated and promoted [Products identified](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Products_to.png)
+- Insight 3: The best product in terms of revenue is 212 [Best and worst products by revenue](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Best_Worst_Products.png)
+- Insight 4: The most used channel is the web, followed by mobile [Most used channel](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Revenue_channel.png)
+- Insight 5: E-commerce customers can be divided into five clusters based on RFM characteristics. Actionable commercial strategies have been provided for each cluster [Clustering](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/tree/main/Images/Clustering)
+- Insight 6: Each cluster has different patterns based on RFM characteristics that guide commercial strategies [RFM](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/RFM%20Insights/AllCharts_RFM.png)
 
 ---
 
