@@ -19,6 +19,7 @@ E-commerce-sales-analysis/
       ├── Original data
       ├── Edited data
 │── images/
+      ├── Business insights
       ├── Distributions
       ├── Clustering
       ├── RFM Insights
