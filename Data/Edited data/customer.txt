@@ -1,0 +1,351 @@
+customer_id,first_name,last_name,email,country,signup_date
+1,Matteo,Conti,user1@example.com,unknown,2023-10-15
+2,Marta,Romano,user2@example.com,italy,2023-10-07
+3,Davide,Rossi,user3@example.com,italy,2023-10-30
+4,Giorgia,De Luca,user4@example.com,germany,2023-11-12
+5,Sofia,Conti,user5@example.com,italy,2023-11-14
+6,Chiara,De Luca,user6@example.com,italy,2023-10-10
+7,Alessio,Lombardi,user7@example.com,uk,2023-06-29
+8,Giulia,Conti,user8@example.com,unknown,2023-11-22
+9,Luca,Lombardi,user9@example.com,italy,2023-12-25
+10,Elena,Bianchi,user10@example.com,unknown,2023-10-03
+11,Elena,Giordano,user11@example.com,italy,2023-09-10
+12,Giorgia,Lombardi,user12@example.com,germany,2023-07-24
+13,Giorgia,Conti,user13@example.com,italy,2023-09-14
+14,Luca,De Luca,user14@example.com,germany,2023-10-09
+15,Filippo,Conti,user15@example.com,france,2023-11-17
+16,Alessio,Lombardi,user16@example.com,germany,2023-09-21
+17,Marco,Lombardi,user17@example.com,spain,2023-07-21
+18,Chiara,Marino,user18@example.com,uk,2023-09-29
+19,Marco,De Luca,user19@example.com,uk,2023-10-16
+20,Filippo,Lombardi,user20@example.com,italy,2023-12-08
+21,Alessio,Ferrari,user21@example.com,italy,2023-11-25
+22,Elena,Rossi,user22@example.com,italy,2023-10-08
+23,Paolo,Verdi,user23@example.com,portugal,2023-07-12
+24,Elena,Rossi,user24@example.com,netherlands,2023-11-27
+25,Davide,Gallo,user25@example.com,italy,2023-10-01
+26,Giulia,Rossi,user26@example.com,portugal,2023-11-30
+27,Matteo,Ferrari,user27@example.com,italy,2023-11-08
+28,Anna,Ferrari,user28@example.com,germany,2023-08-17
+29,Filippo,Conti,user29@example.com,germany,2023-09-03
+30,Filippo,Verdi,user30@example.com,unknown,2023-09-05
+31,Sofia,Giordano,user31@example.com,italy,2023-08-08
+32,Sofia,Verdi,user32@example.com,unknown,2023-11-15
+33,Filippo,Giordano,user33@example.com,france,2023-08-28
+34,Matteo,Marino,user34@example.com,italy,2023-11-01
+35,Alessio,Verdi,user35@example.com,italy,2023-10-01
+36,Chiara,Rossi,user36@example.com,spain,2023-09-04
+37,Davide,Ferrari,user37@example.com,uk,2023-10-30
+38,Marta,Greco,user38@example.com,uk,2023-07-19
+39,Paolo,Bianchi,user39@example.com,unknown,2023-10-04
+40,Matteo,Bianchi,user40@example.com,uk,2023-07-14
+41,Anna,Bianchi,user41@example.com,france,2023-07-06
+42,Giulia,Conti,user42@example.com,uk,2023-11-27
+43,Alessio,Bianchi,user43@example.com,france,2023-11-25
+44,Sara,Rossi,user44@example.com,uk,2023-10-27
+45,Alessio,Gallo,user45@example.com,italy,2023-12-16
+46,Marta,Ferrari,user46@example.com,italy,2023-10-14
+47,Marco,Marino,user47@example.com,unknown,2023-07-05
+48,Luca,Giordano,user48@example.com,italy,2023-08-30
+49,Anna,Lombardi,user49@example.com,netherlands,2023-08-03
+50,Luca,Marino,user50@example.com,france,2023-11-06
+51,Sara,Greco,user51@example.com,italy,2023-07-19
+52,Filippo,De Luca,user52@example.com,netherlands,2023-10-13
+53,Matteo,Gallo,user53@example.com,italy,2023-12-01
+54,Anna,Greco,user54@example.com,germany,2023-07-21
+55,Alessio,Verdi,user55@example.com,italy,2023-12-14
+56,Giorgia,Greco,user56@example.com,portugal,2023-11-02
+57,Alessio,Verdi,user57@example.com,germany,2023-06-23
+58,Marta,Verdi,user58@example.com,uk,2023-09-29
+59,Anna,De Luca,user59@example.com,unknown,2023-08-20
+60,Filippo,Marino,user60@example.com,uk,2023-11-01
+61,Giulia,Romano,user61@example.com,france,2023-07-23
+62,Filippo,Rossi,user62@example.com,unknown,2023-09-21
+63,Paolo,Verdi,user63@example.com,portugal,2023-09-16
+64,Giulia,De Luca,user64@example.com,spain,2023-09-22
+65,Matteo,Gallo,user65@example.com,spain,2023-12-16
+66,Luca,Giordano,user66@example.com,france,2023-12-20
+67,Marco,Lombardi,user67@example.com,uk,2023-06-29
+68,Sara,Lombardi,user68@example.com,italy,2023-11-19
+69,Matteo,Rossi,user69@example.com,france,2023-07-19
+70,Davide,Rossi,user70@example.com,italy,2023-07-16
+71,Giorgia,Marino,user71@example.com,germany,2023-09-20
+72,Giulia,Romano,user72@example.com,uk,2023-12-27
+73,Davide,Lombardi,user73@example.com,italy,2023-09-27
+74,Paolo,Ferrari,user74@example.com,uk,2023-10-10
+75,Filippo,Bianchi,user75@example.com,italy,2023-11-11
+76,Luca,Bianchi,user76@example.com,portugal,2023-09-18
+77,Marta,Ferrari,user77@example.com,unknown,2023-09-10
+78,Alessio,Greco,user78@example.com,spain,2023-11-01
+79,Marta,Bianchi,user79@example.com,uk,2023-07-13
+80,Sara,De Luca,user80@example.com,germany,2023-12-08
+81,Sofia,Ferrari,user81@example.com,uk,2023-08-24
+82,Elena,Ferrari,user82@example.com,italy,2023-10-10
+83,Matteo,Greco,user83@example.com,unknown,2023-12-28
+84,Giorgia,Lombardi,user84@example.com,germany,2023-11-14
+85,Sara,Gallo,user85@example.com,netherlands,2023-11-12
+86,Filippo,De Luca,user86@example.com,unknown,2023-11-25
+87,Matteo,Ferrari,user87@example.com,spain,2023-07-08
+88,Alessio,Bianchi,user88@example.com,unknown,2023-09-11
+89,Davide,De Luca,user89@example.com,germany,2023-11-23
+90,Marta,De Luca,user90@example.com,italy,2023-08-06
+91,Luca,De Luca,user91@example.com,france,2023-08-16
+92,Chiara,Lombardi,user92@example.com,italy,2023-12-07
+93,Filippo,Gallo,user93@example.com,italy,2023-11-18
+94,Marco,Verdi,user94@example.com,uk,2023-08-04
+95,Giulia,Greco,user95@example.com,italy,2023-06-17
+96,Sofia,Marino,user96@example.com,spain,2023-09-19
+97,Davide,Romano,user97@example.com,uk,2023-12-06
+98,Filippo,Greco,user98@example.com,france,2023-10-02
+99,Marta,Ferrari,user99@example.com,germany,2023-07-17
+100,Giorgia,Greco,user100@example.com,uk,2023-09-19
+101,Davide,De Luca,user101@example.com,spain,2023-09-14
+102,Paolo,Bianchi,user102@example.com,france,2023-10-13
+103,Marta,Gallo,user103@example.com,uk,2023-10-25
+104,Sofia,Greco,user104@example.com,france,2023-08-02
+105,Marco,Rossi,user105@example.com,france,2023-09-24
+106,Luca,Greco,user106@example.com,spain,2023-09-21
+107,Marta,Lombardi,user107@example.com,unknown,2023-07-18
+108,Paolo,De Luca,user108@example.com,spain,2023-09-22
+109,Sofia,Conti,user109@example.com,uk,2023-07-12
+110,Elena,De Luca,user110@example.com,spain,2023-07-24
+111,Giulia,Romano,user111@example.com,spain,2023-08-10
+112,Sara,Ferrari,user112@example.com,unknown,2023-12-26
+113,Paolo,Bianchi,user113@example.com,germany,2023-06-25
+114,Alessio,Conti,user114@example.com,italy,2023-12-03
+115,Anna,Ferrari,user115@example.com,uk,2023-07-28
+116,Paolo,Lombardi,user116@example.com,spain,2023-12-21
+117,Sofia,Gallo,user117@example.com,uk,2023-07-11
+118,Matteo,Lombardi,user118@example.com,uk,2023-10-15
+119,Paolo,Bianchi,user119@example.com,spain,2023-09-15
+120,Sofia,Bianchi,user120@example.com,uk,2023-07-30
+121,Anna,Romano,user121@example.com,italy,2023-08-25
+122,Marta,Rossi,user122@example.com,spain,2023-09-04
+123,Anna,Gallo,user123@example.com,uk,2023-10-10
+124,Marta,Greco,user124@example.com,germany,2023-11-08
+125,Sofia,Greco,user125@example.com,germany,2023-08-10
+126,Davide,Verdi,user126@example.com,france,2023-08-30
+127,Matteo,Bianchi,user127@example.com,france,2023-06-21
+128,Sara,Marino,user128@example.com,germany,2023-08-05
+129,Sofia,Greco,user129@example.com,spain,2023-08-20
+130,Anna,Giordano,user130@example.com,italy,2023-11-23
+131,Paolo,Lombardi,user131@example.com,italy,2023-11-13
+132,Giulia,Romano,user132@example.com,italy,2023-11-16
+133,Luca,Bianchi,user133@example.com,spain,2023-08-05
+134,Anna,Ferrari,user134@example.com,portugal,2023-07-27
+135,Alessio,Lombardi,user135@example.com,spain,2023-09-03
+136,Marco,Gallo,user136@example.com,unknown,2023-09-08
+137,Anna,Giordano,user137@example.com,spain,2023-11-12
+138,Matteo,Greco,user138@example.com,germany,2023-12-05
+139,Matteo,Greco,user139@example.com,netherlands,2023-09-04
+140,Giulia,Bianchi,user140@example.com,uk,2023-07-28
+141,Luca,Greco,user141@example.com,spain,2023-12-09
+142,Davide,Romano,user142@example.com,italy,2023-09-30
+143,Luca,Lombardi,user143@example.com,uk,2023-12-15
+144,Elena,Bianchi,user144@example.com,germany,2023-08-31
+145,Filippo,Verdi,user145@example.com,france,2023-08-16
+146,Giorgia,Greco,user146@example.com,italy,2023-06-27
+147,Marco,Conti,user147@example.com,uk,2023-11-09
+148,Marta,De Luca,user148@example.com,italy,2023-09-22
+149,Filippo,Marino,user149@example.com,germany,2023-08-04
+150,Marco,Romano,user150@example.com,italy,2023-09-12
+151,Alessio,Ferrari,user151@example.com,spain,2023-07-12
+152,Alessio,Romano,user152@example.com,uk,2023-12-26
+153,Filippo,Greco,user153@example.com,uk,2023-09-10
+154,Matteo,Marino,user154@example.com,germany,2023-08-14
+155,Marta,Ferrari,user155@example.com,uk,2023-10-13
+156,Giorgia,Verdi,user156@example.com,spain,2023-11-20
+157,Matteo,Conti,user157@example.com,spain,2023-12-19
+158,Sofia,Verdi,user158@example.com,germany,2023-10-29
+159,Elena,Verdi,user159@example.com,italy,2023-07-14
+160,Sara,Ferrari,user160@example.com,unknown,2023-09-06
+161,Sofia,Lombardi,user161@example.com,france,2023-11-04
+162,Sara,Gallo,user162@example.com,uk,2023-11-26
+163,Chiara,Greco,user163@example.com,unknown,2023-09-18
+164,Giorgia,Rossi,user164@example.com,uk,2023-12-02
+165,Giulia,Romano,user165@example.com,uk,2023-07-11
+166,Sofia,De Luca,user166@example.com,spain,2023-08-22
+167,Luca,De Luca,user167@example.com,italy,2023-12-26
+168,Sara,Marino,user168@example.com,france,2023-07-24
+169,Paolo,Lombardi,user169@example.com,italy,2023-11-01
+170,Giorgia,Ferrari,user170@example.com,france,2023-07-27
+171,Matteo,Bianchi,user171@example.com,spain,2023-07-10
+172,Marta,Rossi,user172@example.com,france,2023-07-16
+173,Sofia,Verdi,user173@example.com,italy,2023-12-13
+174,Sofia,De Luca,user174@example.com,germany,2023-12-28
+175,Luca,Lombardi,user175@example.com,germany,2023-07-05
+176,Paolo,Bianchi,user176@example.com,france,2023-11-03
+177,Matteo,Marino,user177@example.com,italy,2023-07-03
+178,Anna,Bianchi,user178@example.com,portugal,2023-11-25
+179,Giulia,Lombardi,user179@example.com,italy,2023-08-20
+180,Giulia,Bianchi,user180@example.com,italy,2023-06-24
+181,Davide,Greco,user181@example.com,italy,2023-12-19
+182,Luca,Rossi,user182@example.com,italy,2023-12-16
+183,Matteo,Conti,user183@example.com,spain,2023-06-21
+184,Giorgia,Lombardi,user184@example.com,uk,2023-08-31
+185,Sofia,Conti,user185@example.com,france,2023-12-15
+186,Filippo,Ferrari,user186@example.com,italy,2023-08-24
+187,Chiara,Lombardi,user187@example.com,italy,2023-10-15
+188,Sofia,Ferrari,user188@example.com,italy,2023-12-05
+189,Filippo,De Luca,user189@example.com,uk,2023-06-28
+190,Elena,De Luca,user190@example.com,germany,2023-09-21
+191,Anna,Gallo,user191@example.com,netherlands,2023-10-06
+192,Chiara,Greco,user192@example.com,france,2023-12-16
+193,Luca,Lombardi,user193@example.com,france,2023-09-14
+194,Luca,Verdi,user194@example.com,uk,2023-11-29
+195,Davide,Rossi,user195@example.com,uk,2023-09-09
+196,Paolo,Gallo,user196@example.com,italy,2023-11-09
+197,Alessio,Verdi,user197@example.com,italy,2023-12-01
+198,Luca,Lombardi,user198@example.com,spain,2023-10-28
+199,Giorgia,Lombardi,user199@example.com,germany,2023-10-16
+200,Marco,Romano,user200@example.com,italy,2023-12-31
+201,Anna,Ferrari,user201@example.com,spain,2023-10-13
+202,Matteo,Conti,user202@example.com,france,2023-07-16
+203,Marco,Gallo,user203@example.com,italy,2023-12-15
+204,Marta,Bianchi,user204@example.com,italy,2023-11-24
+205,Davide,Greco,user205@example.com,unknown,2023-08-28
+206,Anna,Conti,user206@example.com,italy,2023-09-05
+207,Marco,Rossi,user207@example.com,portugal,2023-10-26
+208,Filippo,De Luca,user208@example.com,unknown,2023-11-18
+209,Anna,Marino,user209@example.com,italy,2023-11-02
+210,Giorgia,De Luca,user210@example.com,unknown,2023-12-10
+211,Davide,Lombardi,user211@example.com,germany,2023-06-29
+212,Paolo,Conti,user212@example.com,italy,2023-12-30
+213,Luca,Romano,user213@example.com,spain,2023-09-20
+214,Sofia,Romano,user214@example.com,italy,2023-08-07
+215,Elena,Conti,user215@example.com,italy,2023-07-28
+216,Davide,Rossi,user216@example.com,uk,2023-09-13
+217,Alessio,Verdi,user217@example.com,italy,2023-08-14
+218,Paolo,Marino,user218@example.com,france,2023-12-20
+219,Giorgia,Giordano,user219@example.com,spain,2023-09-22
+220,Filippo,De Luca,user220@example.com,unknown,2023-12-21
+221,Filippo,De Luca,user221@example.com,uk,2023-10-27
+222,Chiara,Verdi,user222@example.com,italy,2023-09-03
+223,Chiara,Ferrari,user223@example.com,netherlands,2023-12-20
+224,Giorgia,Ferrari,user224@example.com,netherlands,2023-10-24
+225,Matteo,Conti,user225@example.com,france,2023-09-04
+226,Sara,Marino,user226@example.com,italy,2023-11-11
+227,Anna,Verdi,user227@example.com,france,2023-08-28
+228,Matteo,Conti,user228@example.com,france,2023-07-28
+229,Elena,Greco,user229@example.com,uk,2023-11-13
+230,Luca,Lombardi,user230@example.com,italy,2023-07-01
+231,Sofia,Marino,user231@example.com,portugal,2023-09-17
+232,Chiara,Bianchi,user232@example.com,uk,2023-09-05
+233,Chiara,Lombardi,user233@example.com,italy,2023-09-12
+234,Alessio,Verdi,user234@example.com,italy,2023-07-27
+235,Marta,Rossi,user235@example.com,italy,2023-08-31
+236,Sara,De Luca,user236@example.com,uk,2023-07-09
+237,Alessio,Gallo,user237@example.com,netherlands,2023-09-09
+238,Anna,Greco,user238@example.com,portugal,2023-11-09
+239,Alessio,Bianchi,user239@example.com,france,2023-07-12
+240,Alessio,Conti,user240@example.com,unknown,2023-07-15
+241,Matteo,Romano,user241@example.com,france,2023-06-27
+242,Luca,Giordano,user242@example.com,germany,2023-11-28
+243,Alessio,Greco,user243@example.com,portugal,2023-11-12
+244,Marta,Giordano,user244@example.com,france,2023-06-23
+245,Filippo,De Luca,user245@example.com,italy,2023-10-05
+246,Chiara,Lombardi,user246@example.com,germany,2023-09-16
+247,Matteo,Bianchi,user247@example.com,italy,2023-10-27
+248,Filippo,De Luca,user248@example.com,uk,2023-08-28
+249,Marco,Greco,user249@example.com,france,2023-11-22
+250,Davide,Romano,user250@example.com,spain,2023-09-24
+251,Giulia,Ferrari,user251@example.com,unknown,2023-07-31
+252,Giulia,Greco,user252@example.com,uk,2023-09-23
+253,Sara,Verdi,user253@example.com,italy,2023-07-31
+254,Sara,Verdi,user254@example.com,italy,2023-09-23
+255,Giorgia,Lombardi,user255@example.com,italy,2023-08-09
+256,Paolo,De Luca,user256@example.com,italy,2023-09-09
+257,Marco,Greco,user257@example.com,italy,2023-08-14
+258,Sara,De Luca,user258@example.com,spain,2023-09-27
+259,Paolo,Ferrari,user259@example.com,unknown,2023-11-14
+260,Paolo,Conti,user260@example.com,italy,2023-10-30
+261,Elena,Verdi,user261@example.com,netherlands,2023-08-28
+262,Matteo,Gallo,user262@example.com,france,2023-09-22
+263,Alessio,Bianchi,user263@example.com,uk,2023-08-18
+264,Sofia,Romano,user264@example.com,spain,2023-08-16
+265,Matteo,Romano,user265@example.com,italy,2023-10-20
+266,Paolo,Gallo,user266@example.com,uk,2023-11-18
+267,Sara,Gallo,user267@example.com,italy,2023-07-22
+268,Elena,Rossi,user268@example.com,italy,2023-08-05
+269,Marco,Romano,user269@example.com,uk,2023-07-06
+270,Matteo,Lombardi,user270@example.com,france,2023-12-30
+271,Giulia,Gallo,user271@example.com,italy,2023-11-01
+272,Anna,Marino,user272@example.com,unknown,2023-07-16
+273,Giulia,Bianchi,user273@example.com,netherlands,2023-11-13
+274,Matteo,Romano,user274@example.com,italy,2023-08-15
+275,Sara,Giordano,user275@example.com,france,2023-08-13
+276,Filippo,Marino,user276@example.com,italy,2023-09-20
+277,Matteo,Rossi,user277@example.com,uk,2023-10-20
+278,Filippo,Conti,user278@example.com,italy,2023-10-24
+279,Giorgia,De Luca,user279@example.com,germany,2023-06-21
+280,Giorgia,Romano,user280@example.com,italy,2023-11-10
+281,Chiara,Rossi,user281@example.com,germany,2023-09-03
+282,Chiara,De Luca,user282@example.com,uk,2023-12-15
+283,Sofia,Ferrari,user283@example.com,italy,2023-10-08
+284,Sofia,Giordano,user284@example.com,italy,2023-12-19
+285,Alessio,Romano,user285@example.com,uk,2023-08-04
+286,Anna,Romano,user286@example.com,france,2023-10-25
+287,Matteo,De Luca,user287@example.com,italy,2023-08-23
+288,Giorgia,Bianchi,user288@example.com,france,2023-12-03
+289,Paolo,Rossi,user289@example.com,spain,2023-10-14
+290,Anna,De Luca,user290@example.com,uk,2023-11-12
+291,Davide,Giordano,user291@example.com,italy,2023-10-10
+292,Giorgia,Giordano,user292@example.com,uk,2023-11-14
+293,Marco,Bianchi,user293@example.com,france,2023-07-15
+294,Marco,Bianchi,user294@example.com,uk,2023-07-30
+295,Giulia,Romano,user295@example.com,spain,2023-11-03
+296,Anna,Conti,user296@example.com,unknown,2023-07-21
+297,Sara,Lombardi,user297@example.com,france,2023-07-01
+298,Filippo,De Luca,user298@example.com,spain,2023-10-04
+299,Sofia,Romano,user299@example.com,italy,2023-12-25
+300,Matteo,Giordano,user300@example.com,portugal,2023-08-16
+301,Chiara,Ferrari,user301@example.com,uk,2023-07-25
+302,Giulia,Bianchi,user302@example.com,italy,2023-11-07
+303,Chiara,Gallo,user303@example.com,uk,2023-08-04
+304,Alessio,Bianchi,user304@example.com,italy,2023-11-17
+305,Davide,Conti,user305@example.com,spain,2023-07-25
+306,Davide,Giordano,user306@example.com,uk,2023-07-22
+307,Elena,Bianchi,user307@example.com,spain,2023-12-30
+308,Davide,Bianchi,user308@example.com,italy,2023-10-12
+309,Sara,Verdi,user309@example.com,italy,2023-08-11
+310,Marta,Verdi,user310@example.com,italy,2023-09-13
+311,Giorgia,Marino,user311@example.com,italy,2023-10-14
+312,Matteo,Marino,user312@example.com,italy,2023-06-24
+313,Elena,Giordano,user313@example.com,italy,2023-12-30
+314,Elena,Gallo,user314@example.com,italy,2023-09-18
+315,Marta,Giordano,user315@example.com,spain,2023-12-22
+316,Paolo,De Luca,user316@example.com,italy,2023-11-20
+317,Davide,Lombardi,user317@example.com,uk,2023-06-23
+318,Giulia,Verdi,user318@example.com,netherlands,2023-11-22
+319,Sara,Gallo,user319@example.com,italy,2023-09-27
+320,Luca,Lombardi,user320@example.com,germany,2023-12-08
+321,Filippo,De Luca,user321@example.com,germany,2023-10-13
+322,Giulia,Verdi,user322@example.com,italy,2023-08-09
+323,Elena,Lombardi,user323@example.com,italy,2023-11-02
+324,Giorgia,De Luca,user324@example.com,uk,2023-08-11
+325,Alessio,Bianchi,user325@example.com,germany,2023-08-21
+326,Alessio,Rossi,user326@example.com,uk,2023-10-10
+327,Sofia,Ferrari,user327@example.com,italy,2023-08-19
+328,Marco,Gallo,user328@example.com,france,2023-12-18
+329,Chiara,Bianchi,user329@example.com,uk,2023-06-15
+330,Marta,Rossi,user330@example.com,uk,2023-08-30
+331,Giorgia,Bianchi,user331@example.com,unknown,2023-06-22
+332,Filippo,Ferrari,user332@example.com,germany,2023-11-05
+333,Sara,Romano,user333@example.com,spain,2023-10-03
+334,Sofia,Ferrari,user334@example.com,uk,2023-07-14
+335,Anna,Gallo,user335@example.com,unknown,2023-06-30
+336,Marta,Conti,user336@example.com,italy,2023-11-11
+337,Paolo,Verdi,user337@example.com,uk,2023-07-25
+338,Elena,Gallo,user338@example.com,spain,2023-11-30
+339,Marco,Conti,user339@example.com,spain,2023-08-20
+340,Matteo,Rossi,user340@example.com,portugal,2023-10-02
+341,Chiara,Giordano,user341@example.com,italy,2023-06-29
+342,Anna,Giordano,user342@example.com,italy,2023-09-24
+343,Giulia,Ferrari,user343@example.com,spain,2023-06-21
+344,Marta,Lombardi,user344@example.com,italy,2023-07-29
+345,Anna,Ferrari,user345@example.com,italy,2023-12-17
+346,Marta,Lombardi,user346@example.com,germany,2023-12-27
+347,Marco,Greco,user347@example.com,portugal,2023-09-10
+348,Sara,Verdi,user348@example.com,germany,2023-12-13
+349,Chiara,Rossi,user349@example.com,france,2023-07-25
+350,Luca,Romano,user350@example.com,italy,2023-10-10

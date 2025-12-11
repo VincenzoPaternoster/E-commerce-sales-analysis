@@ -1,0 +1,4 @@
+channel_id,chan_type
+1,web
+2,marketplace
+3,mobile
