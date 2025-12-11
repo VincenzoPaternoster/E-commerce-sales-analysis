@@ -82,10 +82,12 @@ Key operations performed:
 ---
 
 ## 🔍 Key results
-- Insight 1: There are products that need to be eliminated, recalibrated and promoted
-- Insight 2: The best product in terms of revenue is 212
-- Insight 3: The most used channel is the web, followed by mobile
-- Insight 4: E-commerce customers can be divided into five clusters. Actionable commercial strategies have been provided for each cluster
+- Insight 1: Revenue in 2024 presents high volatility in all the quarters.
+             There are several peaks but the overall direction is slightly upward, indicating a soft improvement in sales throughout the year.
+- Insight 2: There are products that need to be eliminated, recalibrated and promoted
+- Insight 3: The best product in terms of revenue is 212
+- Insight 4: The most used channel is the web, followed by mobile
+- Insight 5: E-commerce customers can be divided into five clusters. Actionable commercial strategies have been provided for each cluster
 
 (Inserire eventuali grafici nella cartella /images e richiamarli con markdown)
 
