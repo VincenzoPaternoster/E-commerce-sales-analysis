@@ -77,8 +77,11 @@ Key operations performed:
 - Main libraries (Pandas,Numpy,Sklearn,Scipy,Matplotlib,Seaborn)
 
   Yeo–Johnson transformation applied to the RFM features to reduce skewness and stabilize variance. [See variables distributions](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Distributions/RFM_Features_distributions.png)
+
   The original distributions of Frequency, Recency and Monetary were highly skewed, and K-Means is sensitive to extreme values.[See extreme values](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Distributions/BoxPlot_Outliers.png)
+
   Yeo–Johnson was chosen because, unlike Box–Cox or log transformation, it can handle zero values (present in Recency). [See difference between trasformations](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/tree/main/Images/Distributions)
+
   After the transformation, the features were standardized before fitting the clustering model.
 ---
 
