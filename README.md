@@ -13,7 +13,7 @@ The project provided an opportunity to explore customer behaviour patterns, unco
 ---
 
 ## 📂 Repository Structure
-
+```
 E-commerce-sales-analysis/
 │── data/
       ├── Original data
@@ -33,7 +33,7 @@ E-commerce-sales-analysis/
 │     ├── modeling.sql
 │── notebook.ipynb
 │── README.md
-
+```
 
 ## 🎯 Project objectives
 - 1 Improve data quality across key entities
