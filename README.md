@@ -1,4 +1,4 @@
-# 📌 E-commerce Sales analysis
+# 📌 E-commerce sales analysis
 A mid-size European e-commerce wants to improve sales performance and customer retention.  
 
 This project analyses an AI-generated e-commerce dataset from 2024 with the goal of practising the complete data analysis workflow — from data cleaning to final business insights.
