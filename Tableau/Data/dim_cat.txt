@@ -1,0 +1,8 @@
+category_id,cat_type
+1,beauty
+2,books
+3,clothing
+4,electronics
+5,home
+6,sports
+7,toys

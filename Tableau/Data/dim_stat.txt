@@ -1,0 +1,4 @@
+status_id,stat_type
+1,refunded
+2,cancelled
+3,completed
