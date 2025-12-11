@@ -76,17 +76,17 @@ Key operations performed:
 - Used techniques (RFM segmentation,k-means clustering,Yeo-Johnson transformation,Standardization)
 - Main libraries (Pandas,Numpy,Sklearn,Scipy,Matplotlib,Seaborn)
 
-  Yeo–Johnson transformation applied to the RFM features to reduce skewness and stabilize variance. [See variables distributions](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Distributions/RFM_Features_distributions.png)
+  Yeo–Johnson transformation applied to the RFM features to reduce skewness and stabilize variance [See variables distributions](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Distributions/RFM_Features_distributions.png)
 
-  The original distributions of Frequency, Recency and Monetary were highly skewed, and K-Means is sensitive to extreme values.[See extreme values](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Distributions/BoxPlot_Outliers.png)
+  The original distributions of Frequency, Recency and Monetary were highly skewed, and K-Means is sensitive to extreme values [See extreme values](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Distributions/BoxPlot_Outliers.png)
 
-  Yeo–Johnson was chosen because, unlike Box–Cox or log transformation, it can handle zero values (present in Recency). [See difference between trasformations](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/tree/main/Images/Distributions)
+  Yeo–Johnson was chosen because, unlike Box–Cox or log transformation, it can handle zero values (present in Recency) [See difference between trasformations](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/tree/main/Images/Distributions)
 
   After the transformation, the features were standardized before fitting the clustering model.
 ---
 
 ## 🔍 Key results
-- Insight 1: Revenue in 2024 presents high volatility in all the quarters. [Revenue Trend Linechart](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Revenue_trend.png)
+- Insight 1: Revenue in 2024 presents high volatility in all the quarters [Revenue Trend Linechart](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Revenue_trend.png)
   
   There are several peaks but the overall direction is slightly upward, indicating a soft improvement in sales throughout the year.
 - Insight 2: There are products that need to be eliminated, recalibrated and promoted [Products identified](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Products_to.png)
