@@ -31,7 +31,8 @@ E-commerce-sales-analysis/
 │── sql/               
 │     ├── cleaning.sql
 │     ├── modeling.sql
-│── notebook.ipynb
+│── python/
+      │──RFM Segmentation of an E-commerce customers.ipynb.
 │── README.md
 ```
 
