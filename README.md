@@ -47,8 +47,8 @@ E-commerce-sales-analysis/
 
 ## 🗂️ Dataset
 **Source:** AI-generated (ChatGPT)
-**Periodo analizzato:** 2024  
-**Dimensione del dataset:** 350 customers-3173 orders-220 products
+**Period examined:** 2024  
+**Dimension of dataset:** 350 customers-3173 orders-220 products
 
 ### 📌 Key variables
 | Variables | Description |
@@ -72,7 +72,7 @@ Key operations performed:
 - Feature engineering (e.g. obtaining season from date)
 ---
 
-## 📊 Methodology / Analysis:
+## 📊 Methodology:
 - Used techniques (RFM segmentation,k-means clustering,Yeo-Johnson transformation,Standardization)
 - Main libraries (Pandas,Numpy,Sklearn,Scipy,Matplotlib,Seaborn)
 
@@ -107,7 +107,7 @@ Key operations performed:
 ---
 
 ## 🛠️ Tools
-- Python (pandas, numpy, matplotlib, seaborn…)
+- Python (pandas, numpy, matplotlib, seaborn)
 - Google Colab
 - SQL Server Management Studio
 - PowerBI
