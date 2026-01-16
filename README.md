@@ -90,17 +90,17 @@ Key operations performed:
   
   There are several peaks but the overall direction is slightly upward, indicating a soft improvement in sales throughout the year.
 - Insight 2: There are products that need to be eliminated, recalibrated and promoted [Products identified](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Products_to.png)
-- Insight 3: The best product in terms of revenue is 212 [Best and worst products by revenue](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Best_Worst_Products.png)
+- Insight 3: The best product in terms of revenue is product 212 [Best and worst products by revenue](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Best_Worst_Products.png)
 - Insight 4: The most used channel is the web, followed by mobile [Most used channel](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Revenue_channel.png)
 - Insight 5: E-commerce customers can be divided into five clusters based on RFM characteristics. Actionable commercial strategies have been provided for each cluster [Clustering](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/tree/main/Images/Clustering)
-- Insight 6: Each cluster has different patterns based on RFM characteristics that guide commercial strategies [RFM](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/RFM%20Insights/AllCharts_RFM.png)
+- Insight 6: Each cluster has different patterns based on RFM characteristics that could drive commercial strategies [RFM](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/RFM%20Insights/AllCharts_RFM.png)
 
 ---
 
 ## 🧠 Conclusions
 - This project allowed me to manage a complete end-to-end data analysis workflow, from data preparation to modelling and visualization.
-  I applied different analytical techniques — including RFM segmentation, Yeo–Johnson transformation and K-Means clustering — and learned
-  how these methods can be combined to extract actionable insights about customer behaviour.
+  I applied different analytical techniques (e.g. RFM segmentation, Yeo–Johnson transformation and K-Means clustering) and learned
+  how these methods can be combined to get actionable insights about customer behaviour.
 
 - The project also help me to improve my ability to structure work efficiently and select the appropriate tools (SQL, Python, Power BI, Tableau) based on the business questions.
   Overall, this experience gave me a base for future customer analytics and segmentation projects.
