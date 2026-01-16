@@ -14,8 +14,6 @@ WHERE country is NULL;
 UPDATE dbo.Customer
 SET country=LOWER(TRIM(country));
 
-select * from Customer;
-
 --- Search for a duplicate values
 WITH dup AS (
     SELECT 
@@ -65,7 +63,7 @@ WITH dup AS (
         ) AS cnt
     FROM Customer
 )
-SELECT 
+SELECT --- create temporary table #id_surv
        email,MIN(customer_id) AS survivor_id
 INTO #id_surv
 FROM dup
@@ -79,7 +77,7 @@ GROUP BY email;
 ALTER TABLE Orders
 ADD email VARCHAR(20);
 
---- Add email in email column
+--- Add email in email column in Orders table
 UPDATE Orders
 SET Orders.email=c.email
 FROM Customer c
@@ -133,8 +131,10 @@ SET status=LOWER(TRIM(status));
 select *
 FROM Orders
 WHERE total_amount<0;
---- There are 21 orders with a negative total amount. It seems those negative values are associated to status "cancelled" and "completed"
+--- There are 21 orders with a negative total amount.
+--- It seems those negative values are associated to status "cancelled" and "completed"
 
+--- Which products have negative price?
 --- Product_id -> Order_id
 --- Product_table -> Orders_items_table -> Orders
 DROP TABLE IF EXISTS #newpric;
@@ -152,7 +152,7 @@ ON new.order_id=o.order_id;
  
 --- There are 3 Product_id (49,141,154) associated with negative prices. 
 --- Since I do not know whether these anomalies are due to errors or other causes,
---- I will calculate a new field called ‘new_amount’ to replace the negative values with 0.
+--- I will calculate a new field called â€˜new_amountâ€™ to replace the negative values with 0.
 
 UPDATE #newpric
 SET price=0
@@ -170,7 +170,7 @@ WHERE #newpric.order_id=new_tot.order_id;
 
 
 
---- Make join with Orders table
+--- Add new_amount values in Orders table
 ALTER TABLE Orders
 ADD new_amount DECIMAL(10,2);
 
@@ -211,7 +211,6 @@ FROM Orders_items
 WHERE quantity=0;
 
 --- I create new table "ordersitems2" withouth these products
-
 DROP TABLE IF EXISTS ordersitems2;
 SELECT order_id,product_id,quantity
 INTO ordersitems2
@@ -255,5 +254,6 @@ SET new_price=ROUND(price,2);
 UPDATE Products
 SET new_price=0
 WHERE new_price<0;
+
 
 END
