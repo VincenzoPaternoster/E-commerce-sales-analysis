@@ -8,7 +8,7 @@ Throughout the project, I applied:
 - Power BI and Tableau for dashboard creation and business storytelling
 - Python for RFM segmentation and machine learning-based clustering
 
-The project provided an opportunity to explore customer behaviour patterns, uncover key performance drivers, and turn data into useful insights.
+The project provided an opportunity to explore customer behaviour patterns, find key performance drivers, and turn data into useful insights.
 
 ---
 
