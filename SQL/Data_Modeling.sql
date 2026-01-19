@@ -102,7 +102,7 @@ CREATE TABLE fact_sales (
 );
 INSERT INTO fact_sales (
     order_id, customer_id, date_id, channel_id, status_id,
-    product_id,p.product_name, category_id, quantity, price, amount
+    product_id,product_name, category_id, quantity, price, amount
 )
 SELECT 
     o.order_id,
@@ -125,5 +125,6 @@ JOIN dim_chan ch ON o.channel = ch.chan_type
 JOIN dim_stat st ON o.status = st.stat_type;
 
 END
+
 
 
