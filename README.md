@@ -92,7 +92,7 @@ Key operations performed:
 - Insight 2: There are products that need to be eliminated, recalibrated and promoted [Products identified](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Products_to.png)
 - Insight 3: The best product in terms of revenue is product 212 [Best and worst products by revenue](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Best_Worst_Products.png)
 - Insight 4: The most used channel is the web, followed by mobile [Most used channel](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/Business%20Insights/Revenue_channel.png)
-- Insight 5: E-commerce customers can be divided into five clusters based on RFM characteristics. Actionable commercial strategies have been provided for each cluster [Clustering](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/tree/main/Images/Clustering)
+- Insight 5: E-commerce customers can be divided into five clusters based on RFM characteristics. Actionable commercial strategies have been provided for each cluster [See clustering insights](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/RFM%20Insights/final_insights.png)
 - Insight 6: Each cluster has different patterns based on RFM characteristics that could drive commercial strategies [RFM](https://github.com/VincenzoPaternoster/E-commerce-sales-analysis/blob/main/Images/RFM%20Insights/AllCharts_RFM.png)
 
 ---
