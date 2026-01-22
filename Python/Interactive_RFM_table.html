@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--[head-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DataFrame</title>
+    <style>
+        body {
+            font-size: 0.875rem;
+            /* About 14px */
+            line-height: 1.4;
+            font-family: "Helvetica Neue",
+                Arial,
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        :root {
+
+            --table_border: 1px solid rgba(34, 36, 38, .1);
+
+        }
+
+        .dataTables_wrapper {
+            margin-top: 2rem;
+        }
+
+        td.dt-nowrap {
+            white-space: nowrap;
+        }
+
+        table.dataTable {
+            border: var(--table_border);
+            margin: 0 0 0 0;
+        }
+
+
+        table.dataTable thead td {
+            /*border-left: var(--table_border);*/
+            border-style: solid;
+            border-color: #e9e9e9;
+            border-width: 0 1px 0 0;
+            padding: 0px 0px 0px 0.4rem !important;
+        }
+
+        table.dataTable td {
+            white-space: nowrap;
+            font-size: 0.875rem;
+            border-left: var(--table_border);
+            max-width: 20rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        table.dataTable td span {
+            float: right;
+        }
+
+        .dt-info {
+            padding: 1em;
+            font-size: 10pt;
+            color: gray;
+            display: flex;
+            align-items: center;
+            /* vertically align contents */
+            gap: 6px;
+            /* optional spacing */
+
+        }
+
+        div.dt-container div.dt-layout-row {
+            margin: 0.5em 0 0 0;
+
+        }
+
+        custom.select {
+            color: black;
+            max-width: 15.5em;
+            margin: 1px;
+        }
+
+        .dtlogo {
+            opacity: 0.5;
+            width: auto;
+            display: block;
+            z-index: 2;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            margin: 1em;
+        }
+
+        .dt-info {
+            padding: 0;
+            font-size: 9pt;
+            color: gray;
+        }
+
+        span.dt-column-title {
+            white-space: wrap;
+            font-weight: 600;
+            font-size: 0.87rem;
+            line-height: 1.1;
+        }
+
+
+        /* Default state */
+        .dt-input {
+            /*  border: 2px solid #ccc;
+            padding: 6px 10px; */
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
+
+        }
+
+        /* Highlight only when user typed something */
+        input.dt-input:not(:placeholder-shown) {
+            background-color: #e0f0ff !important;
+            /* light blue */
+            border-color: #66b2ff !important;
+            font-weight: bold;
+        }
+
+        input[type="search"]::-webkit-search-cancel-button {
+            -webkit-appearance: auto;
+            appearance: auto;
+            cursor: pointer;
+        }
+
+
+        div.dtcc-title {
+            font-weight: 600;
+        }
+
+        table.dataTable span.dtcc span.dtcc-button-icon {
+            color: #0A2540;
+            /* #0A2540  #00457C #0D47A1  #0A3D62 #052C65 */
+            --dt-row-selected-stripe-alpha: 0.99
+        }
+
+
+
+        .custom_btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            padding: 3px 4px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background: #f7f7f7;
+            border-radius: 3px;
+            /* margin:0 1em 0 0; */
+        }
+
+        .custom_btn .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom_btn:hover {
+            background: #e9e9e9;
+        }
+
+        button.dt-button {
+            padding: .2rem 0.5rem !important;
+        }
+
+        div.dt-buttons {
+            margin-right: 1rem;
+
+        }
+
+    </style><!--[scripts-->
+    <link href="https://cdn.datatables.net/v/dt/jq-3.7.0/dt-2.3.4/b-3.2.5/b-colvis-3.2.5/b-html5-3.2.5/cr-2.1.2/cc-1.1.1/datatables.min.css" rel="stylesheet" integrity="sha384-wSlKDmHlZXDO0o5ZHsloB4i8j/JsaA8Jx0uiAW7ECdNdWBoJZXeLnYbh7yCB09Os" crossorigin="anonymous">
+    <script src="https://cdn.datatables.net/v/dt/jq-3.7.0/dt-2.3.4/b-3.2.5/b-colvis-3.2.5/b-html5-3.2.5/cr-2.1.2/cc-1.1.1/datatables.min.js" integrity="sha384-Db6ik1fBYSPYBHoWXu+DJTvPGs+KGoiEMJC36Hp2uJfaHwUWOCZvWxaCnc/4rEBs" crossorigin="anonymous"></script>
+    <!--scripts]-->
+    <!--head]-->
+</head>
+
+<body>
+    <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1-1" style="padding:0px;">
+            <div id="loading" style="display:none;">
+                Loading…
+            </div>
+            <div id="tabcnt" style="width: fit-content; margin: 0 0 0 0.5rem;">
+                <p><!--[title-->
+
+<!--title]-->
+                </p><!--[table_markup-->
+                <table id="pd_datatab" style="width:auto;" class="display compact hover order-column"></table><!--table_markup]-->
+            </div>
+        </div><!--[datatables_logo-->
+
+<!--datatables_logo]-->
+    </div><!--[min_content-->
+    <script type="text/javascript">
+        /* global DataTable, $, jQuery  */
+        (function() {
+            /* https://datatables.net/extensions/columncontrol/examples/styling/alignmentHeaderOnly.html */
+            DataTable.type("num", "className", "dt-body-right");
+            DataTable.type("num-fmt", "className", "dt-body-right");
+            DataTable.type("date", "className", "dt-body-right");
+            if (DataTable.ColumnControl) {
+                const active_funnel = '<svg id="funnel_menu_a" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-3 -3 30 30" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-funnel-icon lucide-funnel"> <rect x="-4" y="-4" width="32" height="32" fill="#0B57D0"/> <path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"/> </svg> ';
+                const inactive_funnel = '<svg xmlns="http://www.w3.org/2000/svg" id="funnel_menu_p" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-filter-icon lucide-list-filter"><path d="M2 5h20"/><path d="M6 12h12"/><path d="M9 19h6"/></svg>';
+                DataTable.ColumnControl.icons["menu"] = inactive_funnel;
+                DataTable.ColumnControl.Button.prototype._checkActive = function() {
+                    var curr_icon = this._dom.icon.innerHTML || "";
+                    /* let is_top_menu = !this._dom.dropdownDisplay;     */
+                    if (this._s.active === true || Object.values(this._s.activeList).includes(true)) {
+                        this._dom.state.innerHTML = DataTable.ColumnControl.icons.tick;
+                        this._dom.button.classList.add("dtcc-button_active");
+                        if (curr_icon.includes("funnel_menu")) {
+                            this._dom.icon.innerHTML = active_funnel;
+                        }
+                    } else {
+                        this._dom.state.innerHTML = "";
+                        this._dom.button.classList.remove("dtcc-button_active");
+                        if (curr_icon.includes("funnel_menu")) {
+                            this._dom.icon.innerHTML = inactive_funnel;
+                        }
+                    }
+                    return this;
+                };
+            }
+
+            function deepMerge(target, source) {
+                for (const key in source) {
+                    if (source[key] && typeof source[key] === "object" && !Array.isArray(source[key])) {
+                        if (!target[key] || typeof target[key] !== "object" || Array.isArray(target[key])) {
+                            target[key] = {};
+                        }
+                        deepMerge(target[key], source[key]);
+                    } else {
+                        target[key] = source[key];
+                    }
+                }
+                return target;
+            }
+
+            function _anyNumber(a) {
+                var reg = /[+-]?((\d+(\.\d*)?)|\.\d+)([eE][+-]?[0-9]+)?/;
+                if (typeof a === "string") {
+                    a = a.replace(",", ".").replace(/ /g, "").match(reg);
+                    a = a !== null ? parseFloat(a[0]) : Number.POSITIVE_INFINITY;
+                }
+                return a;
+            }
+            jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+                "num-html-pre": function(a) {
+                    var x = String(a).replace(/<[\s\S]*?>/g, "");
+                    return parseFloat(_anyNumber(x));
+                },
+                "num-html-asc": function(a, b) {
+                    return a < b ? -1 : a > b ? 1 : 0;
+                },
+                "num-html-desc": function(a, b) {
+                    return a < b ? 1 : a > b ? -1 : 0;
+                }
+            });
+            const add_expand_btn = /*[add_expand_btn*/ true /*add_expand_btn]*/ ;
+
+            function search_info() {
+                if (search_columns || search_columns.length > 0) {
+                    const searchableColumns = search_columns;
+                    let search_msg = "[" + searchableColumns.map(col => `'${col}'`).join(", ") + "]";
+                    if (search_msg.length > 150) {
+                        search_msg = search_msg.slice(0, 150) + "...";
+                    }
+                    const searchNote = $("<span>").css({
+                        margin: "0.5rem",
+                        "font-size": "0.7rem",
+                        "font-style": "italic",
+                        display: "inline-flex",
+                        color: "#667"
+                    }).text(search_msg);
+                    $("#" + TABLE_ID + "_wrapper" + " input.dt-input").after(searchNote);
+                }
+                if (add_expand_btn) {
+                    var dn_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5e5c64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>';
+                    var up_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5e5c64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up"><path d="m18 15-6-6-6 6"/></svg>';
+                    var expand_butt = '<button class="custom_btn" type="button" title="Show tools"><span class="icon">' + dn_icon + "</span></button>";
+                    var tools = $("<span>").css({
+                        display: "flex",
+                        right: "",
+                        "font-size": "8pt"
+                    }).html(expand_butt);
+                    $("#" + TABLE_ID + "_info").before(tools);
+                    $("div.dt-buttons").hide();
+                    $("div.dt-length").hide();
+                    tools.on("click", function(event) {
+                        event.preventDefault();
+                        $("div.dt-buttons").toggle();
+                        $("div.dt-length").toggle();
+                        var iconSpan = $(this).find(".icon");
+                        var button = $(this).find(".custom_btn");
+                        var isDown = iconSpan.html().indexOf("chevron-down") !== -1;
+                        if (isDown) {
+                            iconSpan.html(up_icon);
+                            button.attr("title", "Hide tools");
+                        } else {
+                            iconSpan.html(dn_icon);
+                            button.attr("title", "Show tools");
+                        }
+                    });
+                }
+            }
+            const render_precision = /*[precision*/ 2 /*precision]*/ ;
+            var thousands = "";
+            var decimal = ".";
+            const render_num = (data, type) => {
+                if (data === null) {
+                    return null;
+                }
+                const number = DataTable.render.number(thousands, decimal, render_precision).display(data);
+                if (type !== "display") return number;
+                const color = data < 0 ? "red" : "black";
+                return '<span style="color:' + color + '">' + number + "</span>";
+            };
+            const tab_data =
+                /*[tab_data*/
+[[1,10,4,1649.21,1,"Recent low-value"],[2,19,17,5893.28,3,"Recent high-value"],[3,25,52,4645.74,2,"Medium-value inactive"],[4,35,151,6827.34,0,"Lost high-value"],[5,16,30,3342.64,2,"Medium-value inactive"],[6,24,16,4727.59,3,"Recent high-value"],[7,22,1,3605.78,1,"Recent low-value"],[8,18,87,2631.9,2,"Medium-value inactive"],[9,18,45,3824.66,2,"Medium-value inactive"],[10,38,2,6127.84,3,"Recent high-value"],[11,9,60,1147.85,4,"Inactive low-value"],[12,26,7,4701.37,3,"Recent high-value"],[13,19,23,3031.41,1,"Recent low-value"],[14,19,25,3398.66,2,"Medium-value inactive"],[15,8,38,1725.66,4,"Inactive low-value"],[16,19,15,4368.55,1,"Recent low-value"],[17,36,38,9321.56,0,"Lost high-value"],[18,31,56,7975.87,0,"Lost high-value"],[19,34,3,6920.65,3,"Recent high-value"],[20,31,1,5091.87,3,"Recent high-value"],[21,12,88,1720.99,4,"Inactive low-value"],[22,24,44,4841.18,2,"Medium-value inactive"],[23,31,36,9791.22,0,"Lost high-value"],[24,28,38,3607.76,2,"Medium-value inactive"],[25,34,8,7055.54,3,"Recent high-value"],[26,28,1,5895.56,3,"Recent high-value"],[27,18,98,3555.63,2,"Medium-value inactive"],[28,22,5,3940.37,1,"Recent low-value"],[29,40,56,6249.99,0,"Lost high-value"],[30,20,7,4453.0,1,"Recent low-value"],[31,28,16,5928.65,3,"Recent high-value"],[32,26,24,11655.9,0,"Lost high-value"],[33,18,2,4219.19,1,"Recent low-value"],[34,26,12,6913.6,3,"Recent high-value"],[35,14,49,2572.44,4,"Inactive low-value"],[36,21,1,9005.18,3,"Recent high-value"],[37,23,10,3189.46,1,"Recent low-value"],[38,19,54,2823.6,2,"Medium-value inactive"],[39,28,27,4868.19,2,"Medium-value inactive"],[40,26,7,5342.15,3,"Recent high-value"],[41,21,82,4887.06,2,"Medium-value inactive"],[42,25,37,6372.8,2,"Medium-value inactive"],[43,30,17,5971.22,3,"Recent high-value"],[44,19,18,2342.08,1,"Recent low-value"],[45,40,56,8746.8,0,"Lost high-value"],[46,23,6,3294.14,1,"Recent low-value"],[47,9,50,1341.27,4,"Inactive low-value"],[48,31,90,7360.89,0,"Lost high-value"],[49,20,35,3194.79,2,"Medium-value inactive"],[50,29,23,4008.0,2,"Medium-value inactive"],[51,26,9,4121.84,3,"Recent high-value"],[52,14,3,2769.58,1,"Recent low-value"],[53,16,30,3868.33,2,"Medium-value inactive"],[54,11,142,2469.55,4,"Inactive low-value"],[55,29,11,6037.28,3,"Recent high-value"],[56,26,29,5288.11,2,"Medium-value inactive"],[57,30,23,5882.84,3,"Recent high-value"],[58,30,3,8577.54,3,"Recent high-value"],[59,13,5,2568.29,1,"Recent low-value"],[60,23,188,5152.61,2,"Medium-value inactive"],[61,31,39,6221.26,0,"Lost high-value"],[62,30,98,6891.86,0,"Lost high-value"],[63,29,44,5118.22,2,"Medium-value inactive"],[64,18,160,2979.55,4,"Inactive low-value"],[65,16,23,2454.68,1,"Recent low-value"],[66,23,58,3458.36,2,"Medium-value inactive"],[67,13,0,2443.59,1,"Recent low-value"],[68,33,82,7078.2,0,"Lost high-value"],[69,27,30,4352.09,2,"Medium-value inactive"],[70,18,76,3365.49,2,"Medium-value inactive"],[71,29,136,5467.58,2,"Medium-value inactive"],[72,11,130,2097.43,4,"Inactive low-value"],[73,14,86,3743.08,2,"Medium-value inactive"],[74,16,2,3126.68,1,"Recent low-value"],[75,12,54,2697.2,4,"Inactive low-value"],[76,45,44,9627.69,0,"Lost high-value"],[77,21,19,3076.11,1,"Recent low-value"],[78,6,11,1129.62,1,"Recent low-value"],[79,36,19,6753.7,0,"Lost high-value"],[80,20,32,3469.37,2,"Medium-value inactive"],[81,21,13,4754.88,3,"Recent high-value"],[82,41,10,14850.48,0,"Lost high-value"],[83,24,7,9393.94,3,"Recent high-value"],[84,41,19,7509.08,0,"Lost high-value"],[85,35,11,6760.57,3,"Recent high-value"],[86,27,37,6743.14,2,"Medium-value inactive"],[87,62,52,10777.24,0,"Lost high-value"],[88,14,33,1461.14,4,"Inactive low-value"],[89,23,10,4085.82,3,"Recent high-value"],[90,20,68,4436.72,2,"Medium-value inactive"],[91,35,2,8211.83,3,"Recent high-value"],[92,28,31,8889.39,0,"Lost high-value"],[93,21,21,4220.27,2,"Medium-value inactive"],[94,14,105,2081.66,4,"Inactive low-value"],[95,25,11,6074.67,3,"Recent high-value"],[96,43,131,16541.0,0,"Lost high-value"],[97,26,29,4599.12,2,"Medium-value inactive"],[98,70,23,13902.09,0,"Lost high-value"],[99,40,4,10754.02,3,"Recent high-value"],[100,20,24,4024.25,2,"Medium-value inactive"],[101,25,37,4667.74,2,"Medium-value inactive"],[102,42,38,8477.24,0,"Lost high-value"],[103,18,22,3118.25,1,"Recent low-value"],[104,20,60,3622.5,2,"Medium-value inactive"],[105,38,11,5794.74,3,"Recent high-value"],[106,24,60,4505.79,2,"Medium-value inactive"],[107,29,63,6826.29,0,"Lost high-value"],[108,24,5,4970.59,3,"Recent high-value"],[109,14,58,2137.11,4,"Inactive low-value"],[110,20,44,3385.41,2,"Medium-value inactive"],[111,15,45,2620.2,4,"Inactive low-value"],[112,27,13,4908.11,3,"Recent high-value"],[113,40,26,9110.04,0,"Lost high-value"],[114,12,169,3132.42,4,"Inactive low-value"],[115,25,26,15232.42,0,"Lost high-value"],[116,27,73,6338.47,2,"Medium-value inactive"],[117,10,29,2113.96,4,"Inactive low-value"],[118,37,6,14250.06,0,"Lost high-value"],[119,27,6,4179.82,3,"Recent high-value"],[120,27,29,4583.24,2,"Medium-value inactive"],[121,42,38,18027.02,0,"Lost high-value"],[122,24,45,4441.06,2,"Medium-value inactive"],[123,33,46,6854.73,0,"Lost high-value"],[124,22,36,9118.58,0,"Lost high-value"],[125,37,23,11144.52,0,"Lost high-value"],[126,22,85,4088.51,2,"Medium-value inactive"],[127,17,48,2681.65,2,"Medium-value inactive"],[128,36,24,7074.14,0,"Lost high-value"],[129,19,59,4054.61,2,"Medium-value inactive"],[130,67,33,13531.99,0,"Lost high-value"],[131,14,182,1594.05,4,"Inactive low-value"],[132,35,33,9353.69,0,"Lost high-value"],[133,27,0,5261.47,3,"Recent high-value"],[134,23,6,3622.69,1,"Recent low-value"],[135,29,44,3961.67,2,"Medium-value inactive"],[136,26,24,11365.64,0,"Lost high-value"],[137,24,3,5314.73,3,"Recent high-value"],[138,27,41,5772.1,2,"Medium-value inactive"],[139,25,28,6432.53,2,"Medium-value inactive"],[140,35,40,6337.71,0,"Lost high-value"],[141,13,73,9569.0,2,"Medium-value inactive"],[142,17,0,3046.19,1,"Recent low-value"],[143,23,4,3215.27,1,"Recent low-value"],[144,18,10,3461.42,1,"Recent low-value"],[145,21,5,4963.22,3,"Recent high-value"],[146,32,14,7410.2,3,"Recent high-value"],[147,39,33,9403.88,0,"Lost high-value"],[148,24,13,4376.23,3,"Recent high-value"],[149,5,47,645.04,4,"Inactive low-value"],[150,27,63,3754.67,2,"Medium-value inactive"],[151,36,93,15164.07,0,"Lost high-value"],[152,32,31,5030.92,2,"Medium-value inactive"],[153,25,11,4480.12,3,"Recent high-value"],[154,17,8,3410.66,1,"Recent low-value"],[155,21,96,5352.63,2,"Medium-value inactive"],[156,33,90,5524.12,2,"Medium-value inactive"],[157,19,1,3321.23,1,"Recent low-value"],[158,35,17,7202.43,3,"Recent high-value"],[159,23,37,3867.27,2,"Medium-value inactive"],[160,20,34,3724.63,2,"Medium-value inactive"],[161,20,43,3677.44,2,"Medium-value inactive"],[162,11,9,1666.87,1,"Recent low-value"],[163,24,184,4825.87,2,"Medium-value inactive"],[164,33,11,6196.68,3,"Recent high-value"],[165,28,70,11592.28,0,"Lost high-value"],[166,10,76,1754.17,4,"Inactive low-value"],[167,8,106,908.06,4,"Inactive low-value"],[168,17,3,2643.93,1,"Recent low-value"],[169,14,5,4408.61,1,"Recent low-value"],[170,8,74,2026.75,4,"Inactive low-value"],[171,25,3,4841.26,3,"Recent high-value"],[172,20,10,3679.47,1,"Recent low-value"],[173,17,7,2850.56,1,"Recent low-value"],[174,24,20,4476.68,2,"Medium-value inactive"],[175,28,34,5443.21,2,"Medium-value inactive"],[176,21,41,3830.18,2,"Medium-value inactive"],[177,21,22,4062.97,2,"Medium-value inactive"],[178,28,5,5311.16,3,"Recent high-value"],[179,23,23,4403.12,2,"Medium-value inactive"],[180,18,205,2903.38,4,"Inactive low-value"],[181,23,43,3963.75,2,"Medium-value inactive"],[182,9,7,2058.85,1,"Recent low-value"],[183,22,32,5522.6,2,"Medium-value inactive"],[184,49,43,11609.4,0,"Lost high-value"],[185,4,275,1208.99,4,"Inactive low-value"],[186,16,36,2586.53,2,"Medium-value inactive"],[187,27,6,5224.44,3,"Recent high-value"],[188,4,81,1005.25,4,"Inactive low-value"],[189,31,13,7414.43,3,"Recent high-value"],[190,29,78,8222.02,0,"Lost high-value"],[191,46,34,9285.18,0,"Lost high-value"],[192,6,164,989.86,4,"Inactive low-value"],[193,18,45,2819.56,2,"Medium-value inactive"],[194,45,18,16519.31,0,"Lost high-value"],[195,21,41,3788.61,2,"Medium-value inactive"],[196,13,107,1332.36,4,"Inactive low-value"],[197,25,43,3556.84,2,"Medium-value inactive"],[198,27,29,8783.03,0,"Lost high-value"],[199,14,2,2485.13,1,"Recent low-value"],[200,21,101,5721.31,2,"Medium-value inactive"],[201,25,24,4977.92,2,"Medium-value inactive"],[202,37,15,7223.71,3,"Recent high-value"],[203,20,42,3154.72,2,"Medium-value inactive"],[204,23,68,4595.6,2,"Medium-value inactive"],[205,27,5,4323.83,3,"Recent high-value"],[206,21,20,4055.6,2,"Medium-value inactive"],[207,48,0,11331.72,3,"Recent high-value"],[208,33,48,7591.66,0,"Lost high-value"],[209,13,74,3146.54,4,"Inactive low-value"],[210,23,46,4227.65,2,"Medium-value inactive"],[211,19,102,3432.96,2,"Medium-value inactive"],[212,16,7,2630.4,1,"Recent low-value"],[213,18,9,3536.38,1,"Recent low-value"],[214,26,26,7086.77,3,"Recent high-value"],[215,20,45,10795.99,0,"Lost high-value"],[216,29,16,5856.22,3,"Recent high-value"],[217,37,10,6411.58,3,"Recent high-value"],[218,14,105,4767.62,2,"Medium-value inactive"],[219,12,84,2531.68,4,"Inactive low-value"],[220,30,39,5958.12,2,"Medium-value inactive"],[221,16,52,2765.11,2,"Medium-value inactive"],[222,24,14,5385.97,3,"Recent high-value"],[223,17,60,3098.39,2,"Medium-value inactive"],[224,25,31,6891.96,2,"Medium-value inactive"],[225,33,9,3964.29,3,"Recent high-value"],[226,31,40,6855.31,0,"Lost high-value"],[227,14,6,2702.08,1,"Recent low-value"],[228,18,35,2926.95,2,"Medium-value inactive"],[229,20,55,3188.69,2,"Medium-value inactive"],[230,16,11,3188.18,1,"Recent low-value"],[231,15,181,3035.71,4,"Inactive low-value"],[232,29,74,5032.0,2,"Medium-value inactive"],[233,18,56,3202.11,2,"Medium-value inactive"],[234,16,59,3189.31,2,"Medium-value inactive"],[235,23,57,4266.87,2,"Medium-value inactive"],[236,13,12,2357.1,1,"Recent low-value"],[237,31,53,6514.81,0,"Lost high-value"],[238,29,5,9101.96,3,"Recent high-value"],[239,36,70,11379.97,0,"Lost high-value"],[240,17,20,5653.76,2,"Medium-value inactive"],[241,22,33,5216.24,2,"Medium-value inactive"],[242,18,60,3282.06,2,"Medium-value inactive"],[243,52,5,10394.64,0,"Lost high-value"],[244,10,179,2133.12,4,"Inactive low-value"],[245,36,20,13109.33,0,"Lost high-value"],[246,13,82,4571.87,2,"Medium-value inactive"],[247,21,76,3985.78,2,"Medium-value inactive"],[248,18,22,2633.49,1,"Recent low-value"],[249,20,26,3173.22,2,"Medium-value inactive"],[250,22,0,4688.71,3,"Recent high-value"],[251,14,56,2519.61,4,"Inactive low-value"],[252,24,2,4080.6,3,"Recent high-value"],[253,31,70,4890.41,2,"Medium-value inactive"],[254,23,28,2938.9,2,"Medium-value inactive"],[255,14,9,2199.93,1,"Recent low-value"],[256,34,7,6684.65,3,"Recent high-value"],[257,11,81,2166.61,4,"Inactive low-value"],[258,3,71,493.8,4,"Inactive low-value"],[259,13,86,1621.2,4,"Inactive low-value"],[260,14,44,2495.82,4,"Inactive low-value"],[261,33,39,5409.42,0,"Lost high-value"],[262,34,11,7852.99,3,"Recent high-value"],[263,11,8,2559.04,1,"Recent low-value"],[264,27,43,3775.88,2,"Medium-value inactive"],[265,17,55,3135.66,2,"Medium-value inactive"],[266,20,1,3878.4,1,"Recent low-value"],[267,7,83,1124.5,4,"Inactive low-value"],[268,35,24,7107.45,0,"Lost high-value"],[269,9,26,2087.25,4,"Inactive low-value"],[270,17,1,3095.03,1,"Recent low-value"],[271,27,85,6202.8,2,"Medium-value inactive"],[272,9,119,1128.66,4,"Inactive low-value"],[273,19,64,3741.79,2,"Medium-value inactive"],[274,14,0,3961.36,1,"Recent low-value"],[275,29,34,6510.68,0,"Lost high-value"],[276,42,31,6826.42,0,"Lost high-value"],[277,23,93,12497.3,0,"Lost high-value"],[278,32,1,6311.28,3,"Recent high-value"],[279,18,25,4912.13,2,"Medium-value inactive"],[280,25,5,3909.08,3,"Recent high-value"],[281,12,103,2734.64,4,"Inactive low-value"],[282,26,70,5552.48,2,"Medium-value inactive"],[283,23,112,4637.7,2,"Medium-value inactive"],[284,18,23,2921.9,1,"Recent low-value"],[285,13,9,2425.97,1,"Recent low-value"],[286,22,48,4034.16,2,"Medium-value inactive"],[287,11,6,1918.39,1,"Recent low-value"],[288,18,23,1638.28,1,"Recent low-value"],[289,19,69,2583.61,2,"Medium-value inactive"],[290,32,29,13329.44,0,"Lost high-value"],[291,40,32,9271.78,0,"Lost high-value"],[292,17,0,2514.77,1,"Recent low-value"],[293,19,17,3448.9,1,"Recent low-value"],[294,30,122,6841.24,2,"Medium-value inactive"],[295,24,28,5345.95,2,"Medium-value inactive"],[296,32,3,5637.82,3,"Recent high-value"],[297,26,4,11803.41,3,"Recent high-value"],[298,25,19,4411.45,3,"Recent high-value"],[299,12,192,1958.68,4,"Inactive low-value"],[300,38,14,6601.19,3,"Recent high-value"],[301,20,71,3657.59,2,"Medium-value inactive"],[302,22,58,4982.0,2,"Medium-value inactive"],[303,27,101,4030.05,2,"Medium-value inactive"],[304,21,42,3974.98,2,"Medium-value inactive"],[305,24,80,4674.08,2,"Medium-value inactive"],[306,30,20,5079.81,3,"Recent high-value"],[307,18,131,3745.63,2,"Medium-value inactive"],[308,44,28,12520.24,0,"Lost high-value"],[309,33,2,4508.08,3,"Recent high-value"],[310,19,47,4678.34,2,"Medium-value inactive"],[311,36,51,6968.79,0,"Lost high-value"],[312,10,42,1799.72,4,"Inactive low-value"],[313,24,24,3382.69,2,"Medium-value inactive"],[314,34,17,10217.52,0,"Lost high-value"],[315,23,35,6650.41,2,"Medium-value inactive"],[316,23,14,4386.72,3,"Recent high-value"],[317,42,3,10893.17,3,"Recent high-value"],[318,39,6,8860.7,3,"Recent high-value"],[319,48,12,6611.66,0,"Lost high-value"],[320,20,50,4486.99,2,"Medium-value inactive"],[321,34,2,6854.83,3,"Recent high-value"],[322,36,64,6872.05,0,"Lost high-value"],[323,33,24,7397.88,0,"Lost high-value"],[324,4,184,725.3,4,"Inactive low-value"],[325,11,60,1623.03,4,"Inactive low-value"],[326,16,12,4692.76,1,"Recent low-value"],[327,24,3,5743.0,3,"Recent high-value"],[328,24,54,6839.59,2,"Medium-value inactive"],[329,21,1,3989.0,1,"Recent low-value"],[330,23,45,3538.84,2,"Medium-value inactive"],[331,22,129,5348.63,2,"Medium-value inactive"],[332,17,13,2808.29,1,"Recent low-value"],[333,23,64,5225.4,2,"Medium-value inactive"],[334,34,85,7210.72,0,"Lost high-value"],[335,19,129,4567.4,2,"Medium-value inactive"],[336,25,30,4166.42,2,"Medium-value inactive"],[337,19,104,4626.59,2,"Medium-value inactive"],[338,32,11,6324.75,3,"Recent high-value"],[339,29,6,5949.01,3,"Recent high-value"],[340,20,90,4912.77,2,"Medium-value inactive"],[341,27,74,11883.13,0,"Lost high-value"],[342,30,43,5369.45,2,"Medium-value inactive"],[343,19,79,2413.35,2,"Medium-value inactive"],[344,23,83,5077.05,2,"Medium-value inactive"],[345,28,103,5517.46,2,"Medium-value inactive"],[346,11,77,2175.17,4,"Inactive low-value"],[347,73,10,16115.55,0,"Lost high-value"],[348,20,84,4212.1,2,"Medium-value inactive"],[349,36,35,9786.69,0,"Lost high-value"],[350,20,92,3893.82,2,"Medium-value inactive"]]
+/*tab_data]*/
+            ;
+            const columns =
+                /*[tab_columns*/
+[{"title":"ID","orderable":true,"searchable":true,"columnControl":["order",["title","search"]]},{"title":"Frequency","orderable":true,"searchable":true,"columnControl":["order",["title","search"]]},{"title":"Recency","orderable":true,"searchable":true,"columnControl":["order",["title","search"]]},{"title":"Monetary","orderable":true,"searchable":true,"columnControl":["order",["title","search"]]},{"title":"Cluster","orderable":true,"columnControl":["order",["title","searchList"]]},{"title":"Cluster Label","orderable":true,"columnControl":["order",["title","searchList"]]}]
+/*tab_columns]*/
+            ;
+            const search_columns =
+                /*[search_columns*/
+["Cluster_Label"]
+/*search_columns]*/
+            ;
+            const search_val = search_columns && search_columns.length > 0 ? "search" : null;
+            const custom_layout = {
+                top1Start: "info",
+                top2Start: search_val,
+                topStart: ["pageLength", {
+                    buttons: ["colvis", "copy"]
+                }],
+                topEnd: null,
+                bottomStart: null,
+                bottomEnd: null,
+                bottom: "paging"
+            };
+            const TABLE_ID = /*[table_id*/ "pd_datatab"
+            /*table_id]*/
+            ;
+            const locale_fmt = /*[locale_fmt*/ false /*locale_fmt]*/ ;
+            if (locale_fmt) {
+                DataTable.type("date", "render", DataTable.render.date());
+                DataTable.type("num", "render", DataTable.render.number());
+            } else {
+                DataTable.type("num", "render", DataTable.render.number(thousands, decimal, render_precision));
+            }
+            const clearButton = '<button id="custom_clear1" class="custom_btn"><span class="icon"><svg id="custom_clear2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-funnel-x-icon lucide-funnel-x"><path d="M12.531 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14v6a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341l.427-.473"/><path d="m16.5 3.5 5 5"/><path d="m21.5 3.5-5 5"/></svg></span>Clear all</button>';
+            let table_opts = {
+                data: tab_data,
+                layout: custom_layout,
+                autoWidth: false,
+                columns: columns,
+                pageLength: 50,
+                responsive: true,
+                order: false,
+                processing: true,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search in columns:",
+                    sInfoFiltered: "(filtered from _MAX_ total _ENTRIES-MAX_ ) " + clearButton
+                },
+                initComplete: search_info
+            };
+            const custom_config_opts = /*[js_opts*/
+{"layout": {"topStart": ["pageLength", [{"buttons": ["copy", "csv"]}]]}}
+/*js_opts]*/ ;
+            if (custom_config_opts && Object.keys(custom_config_opts).length > 0) {
+                deepMerge(table_opts, custom_config_opts);
+            }
+            const build_table = function() {
+                let table = $("#" + TABLE_ID).DataTable(table_opts);
+                $(document).on("click", e => {
+                    if (e.target.id.includes("custom_clear")) {
+                        try {
+                            table.search("").columns().columnControl.searchClear().draw();
+                        } catch (err) {
+                            console.log(err);
+                            table.search("").draw();
+                        }
+                    }
+                });
+            };
+            $(document).ready(function() {
+                build_table();
+            });
+        })();
+    </script> <!--min_content]-->
+</body>
+
+</html>
