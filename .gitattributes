@@ -6,3 +6,4 @@
 Dataset/* linguist-vendored
 *.txt linguist-vendored
 *.ipynb linguist-vendored
+*.html linguist-vendored
